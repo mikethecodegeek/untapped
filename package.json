@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "heroku-postbuild": "npm run build --prefix frontend",
+    "heroku-postbuild": "npm run build --prefix auth-front-end",
     "install": "npm --prefix backend install auth-backend && npm --prefix frontend install auth-front-end",
     "dev:backend": "npm install --prefix backend start",
     "dev:frontend": "npm install --prefix frontend start",
