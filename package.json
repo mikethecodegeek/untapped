@@ -6,11 +6,11 @@
   "scripts": {
     "heroku-postbuild": "npm run build --prefix auth-front-end",
     "install": "npm --prefix backend install auth-backend && npm --prefix frontend install auth-front-end",
-    "dev:backend": "npm install --prefix backend start",
-    "dev:frontend": "npm install --prefix frontend start",
-    "sequelize": "npm run --prefix backend sequelize",
-    "sequelize-cli": "npm run --prefix backend sequelize-cli",
-    "start": "npm start --prefix backend"
+    "dev:backend": "npm install --prefix auth-backend start",
+    "dev:frontend": "npm install --prefix auth-front-end start",
+    "sequelize": "npm run --prefix auth-backend sequelize",
+    "sequelize-cli": "npm run --prefix auth-backend sequelize-cli",
+    "start": "npm start --prefix auth-backend"
   },
   "repository": {
     "type": "git",
