@@ -1,4 +1,3 @@
-// backend/config/database.js
 const config = require('./index');
 
 const db = config.db;
@@ -13,6 +12,7 @@ module.exports = {
     password,
     database,
     host,
+    ssl: true,
     dialect: 'postgres',
     seederStorage: "sequelize",
   },
