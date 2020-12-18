@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "heroku-postbuild": "npm run build --prefix auth-front-end",
-    "install": "npm --prefix backend install auth-backend && npm --prefix frontend install auth-front-end",
+    "install": "npm --prefix auth-backend install auth-backend && npm --prefix auth-front-end install auth-front-end",
     "dev:backend": "npm install --prefix auth-backend start",
     "dev:frontend": "npm install --prefix auth-front-end start",
     "sequelize": "npm run --prefix auth-backend sequelize",
