@@ -1,4 +1,7 @@
-const config = require('./index');
+// const config = require('./index');
+const {
+  db: { username, password, database, host },
+} = require('./index');
 
 const db = config.db;
 const username = db.username;
@@ -17,7 +20,6 @@ module.exports = {
   },
   production: {
     use_env_variable: 'DATABASE_URL',
-    ssl: true,
     dialect: 'postgres',
     seederStorage: 'sequelize',
   },
