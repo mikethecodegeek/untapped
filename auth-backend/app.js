@@ -16,7 +16,7 @@ app.use(express.json());
 
 const routes = require('./routes');
 
-app.use(routes); // Connect all the routes
+
 
 // Security Middleware
 if (!isProduction) {
@@ -38,6 +38,8 @@ if (!isProduction) {
       },
     })
   );
+
+  app.use(routes); // Connect all the routes
 
   app.use((_req, _res, next) => {
     const err = new Error("The requested resource couldn't be found.");
