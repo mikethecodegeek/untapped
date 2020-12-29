@@ -2,7 +2,13 @@
 const router = require('express').Router();
 const sessionRouter = require('./session.js');
 const usersRouter = require('./users.js');
+const beerRouter = require('./beer.js');
+const breweriesRouter = require('./breweries.js');
+const checkinRouter = require('./checkin.js');
 
+router.use('/beer', beerRouter);
+router.use('/breweries', breweriesRouter);
+router.use('/checkins', checkinRouter);
 router.use('/session', sessionRouter);
 
 router.use('/users', usersRouter);

@@ -2,9 +2,17 @@ import { createStore, combineReducers, applyMiddleware, compose } from "redux";
 import thunk from "redux-thunk";
 
 import sessionReducer from './session';
+import beerReducer from './beer';
+import breweryReducer from './breweries'
+import searchReducer from './search'
+import checkinReducer from './checkin'
 
 const rootReducer = combineReducers({
   session: sessionReducer,
+  beers: beerReducer,
+  breweries: breweryReducer,
+  search: searchReducer,
+  checkins: checkinReducer
 });
 
 
