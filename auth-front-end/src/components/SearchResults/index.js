@@ -50,7 +50,15 @@ const SearchResults = () => {
         <TabPanel>
         {beer.brewers
         ? beer.brewers.map((brewer) => (
-            <p onClick={() => handleBreweryClick(brewer.id)}>{brewer.name}</p>
+         
+                <div className='section'>
+
+                    <p class="link" onClick={() => handleBreweryClick(brewer.id)}>{brewer.name}</p>
+                    <p class="gray brewSearchLocation">{brewer.city}, {brewer.state}</p>
+                    <p class="gray brewSearchType">{brewer.BreweryType.name}</p>
+
+                </div>
+            
           ))
         : []}
       {

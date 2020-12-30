@@ -4,7 +4,7 @@ const { check } = require('express-validator');
 const { handleValidationErrors } = require('../../utils/validation');
 const { Op } = require("sequelize");
 const { setTokenCookie, requireAuth } = require('../../utils/auth');
-const { Beer, Brewery, Type, checkin,User } = require('../../db/models');
+const { Beer, Brewery, Type, checkin,User,BreweryType } = require('../../db/models');
 
 const router = express.Router();
 
@@ -49,7 +49,7 @@ router.get('/:id/checkins', asyncHandler(async (req,res) => {
 router.get('/search/:name', asyncHandler(async (req,res) => {
     console.log(req.body)
     const beers = await Beer.findAll({where: {name: {[Op.iLike]: `%${req.params.name}%`}},include:[Brewery,Type]});
-    const brewers = await Brewery.findAll({where: {name: {[Op.iLike]: `%${req.params.name}%`}},include:[Beer]});
+    const brewers = await Brewery.findAll({where: {name: {[Op.iLike]: `%${req.params.name}%`}},include:[Beer,BreweryType]});
     res.json({beers,brewers})
 }))
 
