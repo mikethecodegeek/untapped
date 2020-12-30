@@ -1,0 +1,31 @@
+.profileSection {
+    position: relative;
+    overflow: hidden;
+    min-height: 200px;
+    max-height: 300px;
+    height: auto;
+    width: 100%;
+    max-width: 1024px;
+    margin: 0 auto;
+    background-image: url('https://untappd.akamaized.net/site/assets/v3/images/cover_default.jpg');
+    margin-bottom: 50px;
+}
+
+.profileInfo {
+    color: white;
+    position:absolute;
+    bottom: 10px;
+    left: 25px;
+    /* font-size: 3rem; */
+}
+
+.profileInfo > p {
+    font-size: 3rem;
+}
+.numCheckins {
+    font-size: 1.4rem;
+}
+
+.total {
+    font-size: 1.1rem;
+}

@@ -13,12 +13,12 @@ const ShowBrewery = ({ name, city,state,type,description, breweryId }) => {
     
     <div className="">
       
-      <p>{name}</p>
-          <p>
+      <p className='brewHeader'>{name}</p>
+          <p className='gray brewLocation'>
             {city},{state}
           </p>
-          <p>{type}</p>
-          <p>{description}</p>
+          <p className="gray brewType">{type}</p>
+          <p className='gray brewDescription'>{description}</p>
      
     </div>
   );

@@ -1,5 +1,5 @@
 * {
-    font-family: sans-serif;
+    font-family: Helvetica, sans-serif;
 }
 body {
     background-color: #F5F2E8;
@@ -8,11 +8,12 @@ body {
 .container {
     width: 95%;
     margin: auto;
+    /* box-shadow: -6px 8px 5px -4px rgba(0,0,0,0.52); */
 }
 .beerName {
     font-size: 2rem;
     font-weight: 400;
-    font-family: sans-serif;
+    /* font-family: sans-serif; */
 }
 
 .breweryName {
@@ -38,12 +39,15 @@ body {
 }
 
 .gray {
-    color: #AEAEAE
+    /* color: #AEAEAE */
+    color: #888;
 }
 
 .section {
     background-color: white;
-    padding: 20px
+    padding: 20px;
+    /* box-shadow: -6px 8px 5px -4px rgba(0,0,0,0.52); */
+    box-shadow: -4px 4px 5px -4px rgba(0,0,0,0.52);
 }
 
 .beerBox {
