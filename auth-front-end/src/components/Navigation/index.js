@@ -28,8 +28,8 @@ function Navigation({ isLoaded }){
 
       <ul>
         <li>
-        <NavLink className='nav-button' to="/beers">SEE ALL BEERS</NavLink>
-        <NavLink className='nav-button' to="/breweries">SEE ALL BREWERS</NavLink>
+        {/* <NavLink className='nav-button' to="/beers">SEE ALL BEERS</NavLink>
+        <NavLink className='nav-button' to="/breweries">SEE ALL BREWERS</NavLink> */}
           {sessionLinks}
           {/* <NavLink exact to="/">Home</NavLink>
           {isLoaded && sessionLinks} */}

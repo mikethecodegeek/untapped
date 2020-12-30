@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Redirect } from "react-router-dom";
-import * as sessionActions from "../../store/session";
+// import { Redirect } from "react-router-dom";
+// import * as sessionActions from "../../store/session";
 import {newCheckin} from '../../store/checkin'
 
 function CheckinPage() {
@@ -11,13 +11,13 @@ function CheckinPage() {
   const [description, setDescription] = useState("");
   const [beerId, setBeer] = useState("");
   const [rating, setRating] = useState("");
-  const [errors, setErrors] = useState([]);
+  // const [errors, setErrors] = useState([]);
 
 //   if (sessionUser) return <Redirect to="/" />;
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const data = {pic,description,beerId,rating,errors,sessionUser}
+    const data = {pic,description,beerId,rating,sessionUser}
     dispatch(newCheckin(data))
   
   };
@@ -25,9 +25,9 @@ function CheckinPage() {
   return (
     <form onSubmit={handleSubmit}>
       <ul>
-        {errors.map((error, idx) => (
+        {/* {errors.map((error, idx) => (
           <li key={idx}>{error}</li>
-        ))}
+        ))} */}
       </ul>
       <label>
         Pic

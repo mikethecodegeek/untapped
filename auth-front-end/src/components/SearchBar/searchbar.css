@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.searchBar {
+    margin-right: 10px;
+}
+
+.searchBar > form >input {
+    border-radius: 5px;
+    padding: 10px 5px;
+    font-size: 1rem;
+    position: relative;
+    /* top: -5px; */
+    border: none;
+    width: 250px
+}
+
+.searchBar > form >input:focus {
+    outline: none;
+}
+
+::placeholder {
+    color: #AEAEAE
+}

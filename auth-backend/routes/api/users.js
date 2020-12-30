@@ -4,7 +4,8 @@ const { check } = require('express-validator');
 const { handleValidationErrors } = require('../../utils/validation');
 
 const { setTokenCookie, requireAuth } = require('../../utils/auth');
-const { User } = require('../../db/models');
+// const { User } = require('../../db/models');
+const { Beer, Brewery, Type,BreweryType,checkin,User } = require('../../db/models');
 
 const router = express.Router();
 
@@ -27,6 +28,16 @@ const validateSignup = [
       .withMessage('Password must be 6 characters or more.'),
     handleValidationErrors,
   ];
+
+
+  router.get('/:name/checkins', asyncHandler(async (req,res) => {
+    const user = await User.findOne({where:{username:req.params.name}})
+    const userId = user.id;
+    const checkins = await checkin.findAll({where:{userId:userId},include:[User,Beer,Brewery]});
+    console.log(checkins)
+    res.json(checkins)
+}))
+
 
 // Sign up
 router.post(

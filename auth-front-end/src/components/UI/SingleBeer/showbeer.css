@@ -1,0 +1,51 @@
+* {
+    font-family: sans-serif;
+}
+body {
+    background-color: #F5F2E8;
+}
+
+.container {
+    width: 95%;
+    margin: auto;
+}
+.beerName {
+    font-size: 2rem;
+    font-weight: 400;
+    font-family: sans-serif;
+}
+
+.breweryName {
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.beerType {
+    margin: 0px;
+}
+
+.box {
+    border: 1px solid #AEAEAE;
+    padding: 10px 50px;
+    color: #AEAEAE;
+    margin: 5px 0px;
+}
+.flex {
+    display: flex;
+    /* align-items: center; */
+    /* justify-content: space-evenly; */
+}
+
+.gray {
+    color: #AEAEAE
+}
+
+.section {
+    background-color: white;
+    padding: 20px
+}
+
+.beerBox {
+    margin: 20px 0px;
+    
+}

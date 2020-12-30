@@ -3,7 +3,7 @@ import { fetch } from './csrf';
 
 const GET_ALL_CHECKINS = 'beers/GetAllCheckins';
 const GET_SINGLE_CHECKIN = 'beers/GetSingleCheckin';
-const NEW_CHECKIN = 'beers/newCheckin';
+// const NEW_CHECKIN = 'beers/newCheckin';
 
 const getCheckins = (checkins) => {
   return {
@@ -39,9 +39,22 @@ export const getBeerCheckins = (id) => async dispatch => {
     return checkins.data;
   };
 
+  export const getBreweryCheckins = (id) => async dispatch => {
+    const checkins = await fetch(`/api/breweries/${id}/checkins`);
+    dispatch(getCheckins(checkins.data));
+    return checkins.data;
+  };
+
+  export const getUserCheckins = (name) => async dispatch => {
+    const checkins = await fetch(`/api/users/${name}/checkins`);
+    dispatch(getCheckins(checkins.data));
+    return checkins.data;
+  };
+
 
 export const getCheckin = (id) => async dispatch => {
-    const checkin = await fetch(`/api/checkin/${id}`);
+    const checkin = await fetch(`/api/checkins/${id}`);
+    console.log(checkin)
     dispatch(getSingleCheckin(checkin.data));
     return checkin.data;
   };

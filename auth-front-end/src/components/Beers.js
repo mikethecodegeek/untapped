@@ -1,7 +1,7 @@
 import {useSelector,useDispatch} from 'react-redux';
 import {useEffect} from 'react'
 import {getAllBeers} from '../store/beer'
-import { Route, Switch,useHistory } from "react-router-dom";
+import {useHistory } from "react-router-dom";
 
 const Beers = () => {
     const dispatch = useDispatch();

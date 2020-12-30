@@ -25,6 +25,11 @@ module.exports = {
         type: Sequelize.INTEGER,
         references: {model:'Beers'}
       },
+      breweryId: {
+        type: Sequelize.INTEGER,
+        references: {model:'Breweries'}
+      },
+
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

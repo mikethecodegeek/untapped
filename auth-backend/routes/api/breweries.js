@@ -4,7 +4,7 @@ const { check } = require('express-validator');
 const { handleValidationErrors } = require('../../utils/validation');
 
 const { setTokenCookie, requireAuth } = require('../../utils/auth');
-const { Beer, Brewery, Type,BreweryType } = require('../../db/models');
+const { Beer, Brewery, Type,BreweryType,checkin,User } = require('../../db/models');
 
 const router = express.Router();
 
@@ -39,6 +39,12 @@ router.get('/', asyncHandler(async (req,res) => {
 router.get('/:id/beer', asyncHandler(async (req,res) => {
     const beers = await Beer.findAll({brewery:req.params.id});
     res.json(beers)
+}))
+
+router.get('/:id/checkins', asyncHandler(async (req,res) => {
+    const checkins = await checkin.findAll({where:{breweryId:req.params.id},include:[User,Beer]});
+    console.log(checkins)
+    res.json(checkins)
 }))
 
 router.get('/:id', asyncHandler(async (req,res) => {

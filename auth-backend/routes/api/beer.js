@@ -33,13 +33,15 @@ const router = express.Router();
 
 router.get('/', asyncHandler(async (req,res) => {
     const beers = await Beer.findAll({include: [Brewery,Type]});
+    // const beers = ['hello']
     res.json(beers)
 }))
 
 router.get('/:id/checkins', asyncHandler(async (req,res) => {
    
     const checkins = await checkin.findAll({where: {beerId: req.params.id},include: User});
-    console.log(checkins)
+    // console.log(checkins.Brewery)
+    checkins.forEach(checkin => console.log(checkin.Breweries))
     // const brewers = await Brewery.findAll({where: {name: {[Op.iLike]: `%${req.params.name}%`}}});
     res.json(checkins)
 }))
@@ -47,7 +49,7 @@ router.get('/:id/checkins', asyncHandler(async (req,res) => {
 router.get('/search/:name', asyncHandler(async (req,res) => {
     console.log(req.body)
     const beers = await Beer.findAll({where: {name: {[Op.iLike]: `%${req.params.name}%`}},include:[Brewery,Type]});
-    const brewers = await Brewery.findAll({where: {name: {[Op.iLike]: `%${req.params.name}%`}}});
+    const brewers = await Brewery.findAll({where: {name: {[Op.iLike]: `%${req.params.name}%`}},include:[Beer]});
     res.json({beers,brewers})
 }))
 
@@ -57,18 +59,6 @@ router.get('/:id', asyncHandler(async (req,res) => {
 }))
 
 
-// router.post(
-//     '/',
-//     asyncHandler(async (req, res) => {
-//       const { email, password, username } = req.body;
-//       const user = await User.signup({ email, username, password });
-  
-//       await setTokenCookie(res, user);
-  
-//       return res.json({
-//         user,
-//       });
-//     }),
-//   );
+
 
 module.exports = router;

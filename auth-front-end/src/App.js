@@ -12,6 +12,8 @@ import SingleBeer from './components/SingleBeer'
 import SingleBrewery from './components/SingleBrewery'
 import SearchResults from './components/SearchResults'
 import CheckinPage from './components/CheckinPage'
+import Checkin from './components/Checkin'
+import Profile from './components/Profile'
 
 
 
@@ -32,6 +34,12 @@ function App() {
           </Route>
           <Route path="/signup">
             <SignupFormPage />
+          </Route>
+          <Route path="/users/:name">
+            <Profile />
+          </Route>
+          <Route path="/checkins/:id">
+            <Checkin />
           </Route>
           <Route path="/checkins">
             <CheckinPage />
