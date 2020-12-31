@@ -48,8 +48,16 @@ router.get('/:id/checkins', asyncHandler(async (req,res) => {
 
 router.get('/search/:name', asyncHandler(async (req,res) => {
     console.log(req.body)
-    const beers = await Beer.findAll({where: {name: {[Op.iLike]: `%${req.params.name}%`}},include:[Brewery,Type]});
+    const someBeers = await Beer.findAll({where: {name: {[Op.iLike]: `%${req.params.name}%`}},include:[Brewery,Type]});
     const brewers = await Brewery.findAll({where: {name: {[Op.iLike]: `%${req.params.name}%`}},include:[Beer,BreweryType]});
+    // console.log(brewers[0].dataValues.id)
+    let extraBeers = []
+    if (brewers[0]) {
+
+        const brewId = brewers[0].dataValues.id;
+        extraBeers = await Beer.findAll({where: {brewery:brewId},include:[Brewery,Type]})
+    }
+    const beers = [...someBeers,...extraBeers]
     res.json({beers,brewers})
 }))
 

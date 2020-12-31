@@ -18,6 +18,7 @@ const SearchBar = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    // setSearchTerm('')
     history.push(`/beers/search/${searchTerm}`);
   };
 
