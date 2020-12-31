@@ -23,5 +23,6 @@ form > input {
 
 .signup-button:hover {
     background-color: #FFCC00;
-    color: black
+    color: black;
+    cursor: pointer;
 }

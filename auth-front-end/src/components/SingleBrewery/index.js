@@ -29,6 +29,7 @@ const SingleBrewery = () => {
             state={brewery.state}
             description={brewery.description}
             type={brewery.BreweryType.name}
+            image={brewery.imgUrl}
           />
        
         </div>

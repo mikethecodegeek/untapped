@@ -22,9 +22,12 @@ router.post(
       const beer = await Beer.findByPk(beerId);
       const breweryId = beer.dataValues.brewery
       const checkinData = await checkin.create({userId,breweryId,description,pic,rating:parseInt(rating),beerId:parseInt(beerId)}); 
+      const checkedIn = await checkin.findByPk(checkinData.id,{include:[User]})
       // const checkinData = 'hello'
+      // const checkins = checkin.findAll()
+      const checkins = await checkin.findAll({where: {beerId: beer.dataValues.id},include: User});
       return res.json({
-        checkinData,
+        checkedIn
       });
     }),
   );

@@ -18,3 +18,19 @@
     margin-left: 2px;
     font-weight: 100;
 }
+
+.brewImage {
+    height: 200px;
+    width: auto;
+
+}
+.brewImageDiv {
+    /* align-self: flex-start; */
+    justify-self: flex-start;
+}
+
+.flex-between {
+    display: flex;
+    justify-content: space-between;
+
+}

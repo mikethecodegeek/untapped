@@ -28,8 +28,10 @@ function Navigation({ isLoaded, style }){
   } else {
     sessionLinks = (
       <>
+      <div>
         <NavLink className='nav-button' to="/login">SIGN IN</NavLink>
         <NavLink className='nav-button' to="/signup">CREATE AN ACCOUNT</NavLink>
+      </div>
       </>
     );
   }

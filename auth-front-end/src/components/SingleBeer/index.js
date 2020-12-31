@@ -14,6 +14,7 @@ const SingleBeer = () => {
   const checkins = useSelector((state) => state.checkins);
   // const beer = useSelector(state => state);
   console.log(checkins);
+  console.log(id)
 
   useEffect(() => {
     dispatch(getBeer(id));
@@ -23,13 +24,14 @@ const SingleBeer = () => {
   const handleBreweryClick = (id) => {
     history.push(`/breweries/${id}`);
   };
-  if (!beer) return null;
+  if (!beer || !beer.Brewery) return null;
 
   return (
     <div className='container'>
      
-      {
+      { 
         <>
+       
           <ShowBeer
             name={beer.name}
             breweryName={beer.Brewery.name}
@@ -38,15 +40,17 @@ const SingleBeer = () => {
             abv={beer.abv}
             ibu={beer.ibu}
             description={beer.description}
+            id={id}
           />
          
         </>
       }
 
-      {
+      { checkins &&
         <div className='section'>
           <h2>Global Recent Activity</h2>
           {checkins.map((checkin) => {
+              
             return (
               <div>
                 <UserCheckin

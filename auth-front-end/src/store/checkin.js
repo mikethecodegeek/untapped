@@ -3,12 +3,19 @@ import { fetch } from './csrf';
 
 const GET_ALL_CHECKINS = 'beers/GetAllCheckins';
 const GET_SINGLE_CHECKIN = 'beers/GetSingleCheckin';
+const ADD_CHECKIN = 'beers/addCheckin';
 // const NEW_CHECKIN = 'beers/newCheckin';
 
 const getCheckins = (checkins) => {
   return {
     type: GET_ALL_CHECKINS,
     checkins
+  };
+};
+const addCheckin = (checkin) => {
+  return {
+    type: ADD_CHECKIN,
+    checkin
   };
 };
 
@@ -62,7 +69,8 @@ export const getCheckin = (id) => async dispatch => {
 export const newCheckin = (data) => async dispatch => {
     console.log(data)
     const checkin = await fetch(`/api/checkins/`,{method:'post',body: JSON.stringify({data})});
-    dispatch(getCheckins(checkin.data));
+    console.log(checkin.data)
+    dispatch(addCheckin(checkin.data.checkedIn));
     return checkin.data;
   };
 
@@ -76,6 +84,10 @@ const checkinReducer = (state = initialState, action) => {
       newState = Object.assign({}, state);
       newState.checkins = action.checkins;
       return action.checkins;
+    case ADD_CHECKIN:
+      newState = [...state,action.checkin];
+      return newState;
+      
     case GET_SINGLE_CHECKIN:
       newState = Object.assign({}, state);
       newState.checkin = action.checkin;
