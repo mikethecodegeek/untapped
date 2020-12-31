@@ -5,7 +5,7 @@ import { useHistory } from "react-router-dom";
 
 const ShowBrewery = ({ name, city,state,type,description, breweryId }) => {
   const history = useHistory();
-
+ 
   const brewClick = () => {
     history.push(`/breweries/${breweryId}`);
   };

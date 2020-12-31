@@ -5,7 +5,7 @@ import { useHistory } from "react-router-dom";
 // import { set } from 'js-cookie';
 import "./searchbar.css";
 
-const SearchBar = () => {
+const SearchBar = ({style}) => {
   // const dispatch = useDispatch();
   // const {id } = useParams();
   // const beer = useSelector(state => state.beers[0]);
@@ -18,12 +18,12 @@ const SearchBar = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // setSearchTerm('')
+    setSearchTerm('')
     history.push(`/beers/search/${searchTerm}`);
   };
 
   return (
-    <div className="searchBar">
+    <div className={style}>
       <form onSubmit={handleSubmit}>
         <input
           type="text"

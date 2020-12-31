@@ -6,13 +6,24 @@ import './Navigation.css';
 import '../SearchBar'
 import SearchBar from '../SearchBar';
 
-function Navigation({ isLoaded }){
+function Navigation({ isLoaded, style }){
   const sessionUser = useSelector(state => state.session.user);
 
   let sessionLinks;
   if (sessionUser) {
     sessionLinks = (
+      <>
+      <h1>UNTAPPD</h1>
+      <div>
+      <ul>
+        <li>
+
       <ProfileButton user={sessionUser} />
+        </li>
+      </ul>
+      <SearchBar style='searchBar' /> 
+      </div>
+      </>
     );
   } else {
     sessionLinks = (
@@ -24,18 +35,18 @@ function Navigation({ isLoaded }){
   }
 
   return (
-    <div className='nav-bar'>
+    <div className={style}>
 
       <ul>
         <li>
         {/* <NavLink className='nav-button' to="/beers">SEE ALL BEERS</NavLink>
         <NavLink className='nav-button' to="/breweries">SEE ALL BREWERS</NavLink> */}
-          {sessionLinks}
           {/* <NavLink exact to="/">Home</NavLink>
           {isLoaded && sessionLinks} */}
         </li>
       </ul>
-          <SearchBar /> 
+          {sessionLinks}
+         
 
     </div>
   );

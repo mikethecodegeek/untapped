@@ -1,13 +1,28 @@
 .nav-bar {
-    background-color: #FFCC00;
     position: relative;
     height: 50px;
     top: -18px;
     display: flex;
     padding-top: 20px;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: space-between;
     
+}
+
+.orange {
+    background-color: #FFCC00;
+}
+
+.black {
+    background-color: black;
+}
+
+.nav-bar > h1 {
+    color: white;
+    justify-self: flex-start;
+    /* align-self: flex-start; */
+    position: fixed;
+    left: 10px;
 }
 
 .nav-button,.signup-button {
@@ -35,10 +50,21 @@
 .nav-bar > ul >li >ul {
     list-style: none;
 }
+.nav-bar > div {
+    display: flex;
+}
+
+.nav-bar > div>ul {
+    list-style: none;
+}
+.nav-bar > div>ul>li>ul {
+    list-style: none;
+}
 .userButton {
     border: none;
     background-color: transparent;
     margin-right: 10px;
+    margin-top: 15px;
 }
 
 .userButton:focus {

@@ -1,5 +1,5 @@
 // frontend/src/App.js
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useSelector } from "react";
 import { useDispatch } from "react-redux";
 import { Route, Switch } from "react-router-dom";
 import LoginFormPage from "./components/LoginFormPage";
@@ -14,19 +14,22 @@ import SearchResults from './components/SearchResults'
 import CheckinPage from './components/CheckinPage'
 import Checkin from './components/Checkin'
 import Profile from './components/Profile'
+import Home from './components/Home'
 
 
 
 function App() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
+  // const user = useSelector((state) => state.session);
+
   useEffect(() => {
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
   }, [dispatch]);
 
   return (
     <>
-      <Navigation isLoaded={isLoaded} />
+      <Navigation isLoaded={isLoaded} style='nav-bar' />
       {isLoaded && (
         <Switch>
           <Route path="/login">
@@ -58,6 +61,9 @@ function App() {
           </Route>
           <Route path="/breweries">
             <Breweries />
+          </Route>
+          <Route path="/">
+            <Home />
           </Route>
         </Switch>
       )}

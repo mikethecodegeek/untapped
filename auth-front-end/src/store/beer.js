@@ -2,6 +2,7 @@
 import { fetch } from './csrf';
 
 const GET_ALL_BEERS = 'beers/GetAllBeers';
+const GET_HOME_BEERS = 'beers/GetHomeBeers';
 const GET_SINGLE_BEER = 'beers/GetSingleBeer';
 
 const getBeers = (beers) => {
@@ -25,6 +26,14 @@ export const getAllBeers = () => async dispatch => {
     // console.log(beers.data)
     return beers.data;
   };
+
+export const getHomeBeers = () => async dispatch => {
+    const beers = await fetch('/api/beer/homebeers');
+    dispatch(getBeers(beers.data));
+    // console.log(beers.data)
+    return beers.data;
+  };
+
 
 
 export const getBeer = (id) => async dispatch => {

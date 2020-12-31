@@ -61,6 +61,10 @@ router.get('/search/:name', asyncHandler(async (req,res) => {
     res.json({beers,brewers})
 }))
 
+router.get('/homebeers', asyncHandler(async (req,res) => {
+    const beers = await Beer.findAll({limit: 20});
+    res.json(beers)
+}))
 router.get('/:id', asyncHandler(async (req,res) => {
     const beers = await Beer.findAll({where: {id:req.params.id},include:[Type,Brewery]});
     res.json(beers)
