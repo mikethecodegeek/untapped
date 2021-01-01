@@ -39,14 +39,7 @@ function Navigation({ isLoaded, style }){
   return (
     <div className={style}>
 
-      <ul>
-        <li>
-        {/* <NavLink className='nav-button' to="/beers">SEE ALL BEERS</NavLink>
-        <NavLink className='nav-button' to="/breweries">SEE ALL BREWERS</NavLink> */}
-          {/* <NavLink exact to="/">Home</NavLink>
-          {isLoaded && sessionLinks} */}
-        </li>
-      </ul>
+   
           {sessionLinks}
          
 

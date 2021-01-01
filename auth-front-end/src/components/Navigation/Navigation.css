@@ -20,9 +20,12 @@
 .nav-bar > h1 {
     color: white;
     justify-self: flex-start;
+    position: relative;
+    left: 20px;
     /* align-self: flex-start; */
-    position: fixed;
-    left: 10px;
+    /* position: fixed; */
+    /* position: relative; */
+    /* left: -110px; */
 }
 
 .nav-button,.signup-button {
