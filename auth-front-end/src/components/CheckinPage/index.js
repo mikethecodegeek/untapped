@@ -1,15 +1,18 @@
 import React, { useState,useParams } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import {useHistory} from 'react-router-dom';
 import ReactStars from "react-rating-stars-component";
 // import { Redirect } from "react-router-dom";
 // import * as sessionActions from "../../store/session";
 import {newCheckin} from '../../store/checkin'
+// import ModalComponent from '../Modal'
 
-function CheckinPage({id}) {
+function CheckinPage({id, closeModal}) {
   const dispatch = useDispatch();
+  const history=useHistory();
   const sessionUser = useSelector((state) => state.session.user);
   // const {id} = useParams()
-
+  // console.log(ModalComponent.setModalIsOpenToFalse)
   const [pic, setPic] = useState("");
   const [description, setDescription] = useState("");
   const [beerId, setBeer] = useState("");
@@ -25,6 +28,7 @@ const changeRating = (newRating) => {
     e.preventDefault();
     const data = {pic,description,beerId:id,rating,sessionUser}
     dispatch(newCheckin(data))
+    closeModal();
 
   };
 
@@ -71,7 +75,7 @@ const changeRating = (newRating) => {
           onChange={(e) => setRating(e.target.value)}
           required
         /> */}
-        
+
         <ReactStars
           count={5}
           className='checkinRating'

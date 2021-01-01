@@ -26,7 +26,7 @@ function ModalComponent ({id}){
             <div className='modalTop'>
                 <button className='btn-close' onClick={setModalIsOpenToFalse}>x</button>
             </div>
-                <CheckinPage id={id} />
+                <CheckinPage id={id} closeModal={setModalIsOpenToFalse} />
             </Modal>
         </>
     )

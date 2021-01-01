@@ -42,19 +42,19 @@ export const getAllCheckins = () => async dispatch => {
 
 export const getBeerCheckins = (id) => async dispatch => {
     const checkins = await fetch(`/api/beer/${id}/checkins`);
-    dispatch(getCheckins(checkins.data));
+    dispatch(getCheckins(checkins.data.reverse()));
     return checkins.data;
   };
 
   export const getBreweryCheckins = (id) => async dispatch => {
     const checkins = await fetch(`/api/breweries/${id}/checkins`);
-    dispatch(getCheckins(checkins.data));
+    dispatch(getCheckins(checkins.data.reverse()));
     return checkins.data;
   };
 
   export const getUserCheckins = (name) => async dispatch => {
     const checkins = await fetch(`/api/users/${name}/checkins`);
-    dispatch(getCheckins(checkins.data));
+    dispatch(getCheckins(checkins.data.reverse()));
     return checkins.data;
   };
 
@@ -62,7 +62,7 @@ export const getBeerCheckins = (id) => async dispatch => {
 export const getCheckin = (id) => async dispatch => {
     const checkin = await fetch(`/api/checkins/${id}`);
     console.log(checkin)
-    dispatch(getSingleCheckin(checkin.data));
+    dispatch(getSingleCheckin(checkin.data.reverse));
     return checkin.data;
   };
 
@@ -85,7 +85,8 @@ const checkinReducer = (state = initialState, action) => {
       newState.checkins = action.checkins;
       return action.checkins;
     case ADD_CHECKIN:
-      newState = [...state,action.checkin];
+      newState = [action.checkin,...state];
+      console.log(newState)
       return newState;
       
     case GET_SINGLE_CHECKIN:
