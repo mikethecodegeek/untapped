@@ -11,9 +11,31 @@ p {
     color: #FFA851;
 }
 
+.user-rating {
+    margin-left: 50px;
+    width: 150px;
+    padding: 10px;
+    text-align: center;
+}
 .checkinContainer {
     margin: 20px 0px;
     padding: 20px 0px;
     border-bottom: 1px solid grey;
-    
+}
+
+.single-checkin {
+    /* border: thin solid #888888; */
+    width: 90%;
+    margin: auto;
+    padding: 5px;
+    margin-top: 10px;
+}
+.single-checkin > pre {
+   margin-top: 5px;
+   margin-left: 20px;
+}
+
+.activity>div:last-child>div {
+    border-bottom: none;
+    /* color: green */
 }

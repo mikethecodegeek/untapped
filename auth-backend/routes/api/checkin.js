@@ -26,26 +26,20 @@ router.post(
     const userId = req.body.data.sessionUser.id;
     const beer = await Beer.findByPk(beerId);
     const breweryId = beer.dataValues.brewery;
+    
     const checkinData = await checkin.create({
       userId,
       breweryId,
       description,
       pic,
-      rating: parseInt(rating),
+      rating: parseInt(rating) || 0,
       beerId: parseInt(beerId),
     });
     const checkedIn = await checkin.findByPk(checkinData.id, {
       include: [User],
     });
 
-    // checkedIn = checkedIn;
-    // const checkinData = 'hello'
-    // const checkins = checkin.findAll()
-    const checkins = await checkin.findAll({
-      order: [["id", "DESC"]],
-      where: { beerId: beer.dataValues.id },
-      include: User,
-    });
+   
     return res.json({
       checkedIn,
     });

@@ -61,15 +61,15 @@ export const getBeerCheckins = (id) => async dispatch => {
 
 export const getCheckin = (id) => async dispatch => {
     const checkin = await fetch(`/api/checkins/${id}`);
-    console.log(checkin)
+    // console.log(checkin)
     dispatch(getSingleCheckin(checkin.data.reverse));
     return checkin.data;
   };
 
 export const newCheckin = (data) => async dispatch => {
-    console.log(data)
+    // console.log(data)
     const checkin = await fetch(`/api/checkins/`,{method:'post',body: JSON.stringify({data})});
-    console.log(checkin.data)
+    // console.log(checkin.data)
     dispatch(addCheckin(checkin.data.checkedIn));
     return checkin.data;
   };

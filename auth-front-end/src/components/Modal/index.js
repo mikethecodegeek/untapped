@@ -1,12 +1,13 @@
 
 import React, {useState} from 'react';
 import Modal from 'react-modal';
+import { useSelector } from "react-redux";
 import CheckinPage from '../CheckinPage'
 import './modal.css'
 
 
 function ModalComponent ({id}){
-
+    const sessionUser = useSelector((state) => state.session.user);
     const [modalIsOpen,setModalIsOpen] = useState(false);
 
     const setModalIsOpenToTrue =()=>{
@@ -16,6 +17,7 @@ function ModalComponent ({id}){
     const setModalIsOpenToFalse =()=>{
         setModalIsOpen(false)
     }
+    if (!sessionUser) return null;
 
     return(
         <>

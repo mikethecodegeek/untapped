@@ -13,8 +13,8 @@ const SingleBeer = () => {
   const beer = useSelector((state) => state.beers[0]);
   const checkins = useSelector((state) => state.checkins);
   // const beer = useSelector(state => state);
-  console.log(checkins);
-  console.log(id)
+//   console.log(checkins);
+//   console.log(id)
 
   useEffect(() => {
     dispatch(getBeer(id));
@@ -41,19 +41,22 @@ const SingleBeer = () => {
             ibu={beer.ibu}
             description={beer.description}
             id={id}
+            image={beer.imgUrl}
+            // numCheckins={checkins.length}
           />
          
         </>
       }
 
       { checkins &&
-        <div className='section'>
+        <div className='section activity'>
           <h2>Global Recent Activity</h2>
           {checkins.map((checkin) => {
               
             return (
               <div>
                 <UserCheckin
+                  key={checkin.id}
                   username={checkin.User.username}
                   beerId={beer.id}
                   beer={beer.name}

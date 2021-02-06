@@ -26,14 +26,15 @@ const Profile = () => {
         </div>
             
       <div className="container">
-        <div className="section">
+        <div className="section activity">
           <h2>{name}'s Recent Activity</h2>
           {checkins &&
             checkins.map((checkin) => {
               if (checkin.User && checkin.Beer && checkin.Brewery) {
                 return (
-                  <div className="">
+                  <div className=""> 
                     <UserCheckin
+                      key={checkin.id}  
                       username={checkin.User.username}
                       beerId={checkin.Beer.id}
                       beer={checkin.Beer.name}

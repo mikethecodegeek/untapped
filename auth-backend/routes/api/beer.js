@@ -1,76 +1,102 @@
-const express = require('express');
-const asyncHandler = require('express-async-handler');
-const { check } = require('express-validator');
-const { handleValidationErrors } = require('../../utils/validation');
+const express = require("express");
+const asyncHandler = require("express-async-handler");
 const { Op } = require("sequelize");
-const { setTokenCookie, requireAuth } = require('../../utils/auth');
-const { Beer, Brewery, Type, checkin,User,BreweryType } = require('../../db/models');
+
+const {
+  Beer,
+  Brewery,
+  Type,
+  checkin,
+  User,
+  BreweryType,
+} = require("../../db/models");
 
 const router = express.Router();
 
-// const validateSignup = [
-//     check('email')
-//       .exists({ checkFalsy: true })
-//       .isEmail()
-//       .withMessage('Please provide a valid email.'),
-//     check('username')
-//       .exists({ checkFalsy: true })
-//       .isLength({ min: 4 })
-//       .withMessage('Please provide a username with at least 4 characters.'),
-//     check('username')
-//       .not()
-//       .isEmail()
-//       .withMessage('Username cannot be an email.'),
-//     check('password')
-//       .exists({ checkFalsy: true })
-//       .isLength({ min: 6 })
-//       .withMessage('Password must be 6 characters or more.'),
-//     handleValidationErrors,
-//   ];
+router.get(
+  "/",
+  asyncHandler(async (req, res) => {
+    const beers = await Beer.findAll({ include: [Brewery, Type] });
 
+    res.json(beers);
+  })
+);
 
+router.get(
+  "/:id/checkins",
+  asyncHandler(async (req, res) => {
+    const checkins = await checkin.findAll({
+      where: { beerId: req.params.id },
+      include: User,
+    });
+    res.json(checkins);
+  })
+);
 
+router.get(
+  "/search/:name",
+  asyncHandler(async (req, res) => {
+    // Get all beers that match search terms
+    const someBeers = await Beer.findAll({
+      where: { name: { [Op.iLike]: `%${req.params.name}%` } },
+      include: [Brewery, Type],
+    });
 
-router.get('/', asyncHandler(async (req,res) => {
-    const beers = await Beer.findAll({include: [Brewery,Type]});
-    // const beers = ['hello']
-    res.json(beers)
-}))
+    // Get all breweries that match search terms
+    const brewers = await Brewery.findAll({
+      where: { name: { [Op.iLike]: `%${req.params.name}%` } },
+      include: [Beer, BreweryType],
+    });
 
-router.get('/:id/checkins', asyncHandler(async (req,res) => {
-   
-    const checkins = await checkin.findAll({where: {beerId: req.params.id},include: User});
-    // console.log(checkins.Brewery)
-    checkins.forEach(checkin => console.log(checkin.Breweries))
-    // const brewers = await Brewery.findAll({where: {name: {[Op.iLike]: `%${req.params.name}%`}}});
-    res.json(checkins)
-}))
+    // This code uses the results from the Breweries table to find all beers
+    // from a specific brewery even though they don't match the search terms
 
-router.get('/search/:name', asyncHandler(async (req,res) => {
-    console.log(req.body)
-    const someBeers = await Beer.findAll({where: {name: {[Op.iLike]: `%${req.params.name}%`}},include:[Brewery,Type]});
-    const brewers = await Brewery.findAll({where: {name: {[Op.iLike]: `%${req.params.name}%`}},include:[Beer,BreweryType]});
-    // console.log(brewers[0].dataValues.id)
-    let extraBeers = []
+    let beersFromBrewery = [];
+
+    // Make sure we actually have some data to work with
     if (brewers[0]) {
 
-        const brewId = brewers[0].dataValues.id;
-        extraBeers = await Beer.findAll({where: {brewery:brewId},include:[Brewery,Type]})
+      // Get the brewery id from the search results
+      const brewId = brewers[0].dataValues.id;
+
+      // Get all beers from the brewery
+      beersFromBrewery = await Beer.findAll({
+        where: { brewery: brewId },
+        include: [Brewery, Type],
+      });
     }
-    const beers = [...someBeers,...extraBeers]
-    res.json({beers,brewers})
-}))
 
-router.get('/homebeers', asyncHandler(async (req,res) => {
-    const beers = await Beer.findAll({limit: 20});
-    res.json(beers)
-}))
-router.get('/:id', asyncHandler(async (req,res) => {
-    const beers = await Beer.findAll({where: {id:req.params.id},include:[Type,Brewery]});
-    res.json(beers)
-}))
+    // Create an array full of beer ids
+    const someBeersIds = someBeers.map((beer) => beer.dataValues.id);
 
+    // Filter out the beers that we already got from the first DB call
+    const moreBeers = beersFromBrewery.filter(
+      (beer) => !someBeersIds.includes(beer.dataValues.id)
+    );
 
+    // Create an array full of unique beers from both the first and second DB call
+    let beers = [...someBeers, ...moreBeers];
 
+    res.json({ beers, brewers });
+  })
+);
+
+router.get(
+  "/homebeers",
+  asyncHandler(async (req, res) => {
+    const beers = await Beer.findAll({ limit: 20 });
+    res.json(beers);
+  })
+);
+router.get(
+  "/:id",
+  asyncHandler(async (req, res) => {
+    const beers = await Beer.findAll({
+      where: { id: req.params.id },
+      include: [Type, Brewery],
+    });
+    res.json(beers);
+  })
+);
 
 module.exports = router;

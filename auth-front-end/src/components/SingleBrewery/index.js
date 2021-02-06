@@ -36,19 +36,20 @@ const SingleBrewery = () => {
       }
 
       {
-        <div className="section">
+        <div className="section activity">
           <h2>Global Activity</h2>
           {checkins.map((checkin) => {
             if (checkin.User.username && checkin.Beer) {
               return (
                 <div>
                   <UserCheckin
+                    key={checkin.id}
                     username={checkin.User.username}
                     beerId={checkin.Beer.id}
                     beer={checkin.Beer.name}
                     breweryId={brewery.id}
                     brewery={brewery.name}
-                    rating={checkin.rating}
+                    rating={checkin.rating || 0}
                     comment={checkin.description}
                   />
                   {/* <p>{checkin.User.username} is drinking a {checkin.Beer.name} by {brewery.name}</p>

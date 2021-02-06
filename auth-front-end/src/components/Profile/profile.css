@@ -9,6 +9,7 @@
     margin: 0 auto;
     background-image: url('https://untappd.akamaized.net/site/assets/v3/images/cover_default.jpg');
     margin-bottom: 50px;
+    z-index: -1;
 }
 
 .profileInfo {

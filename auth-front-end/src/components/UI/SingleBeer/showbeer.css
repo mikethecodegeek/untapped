@@ -8,6 +8,7 @@ body {
 .container {
     width: 95%;
     margin: auto;
+    margin-bottom: 50px;
     /* box-shadow: -6px 8px 5px -4px rgba(0,0,0,0.52); */
 }
 .beerName {
@@ -31,6 +32,7 @@ body {
     padding: 10px 50px;
     color: #AEAEAE;
     margin: 5px 0px;
+    white-space: nowrap;
 }
 .flex {
     display: flex;
@@ -50,7 +52,22 @@ body {
     box-shadow: -4px 4px 5px -4px rgba(0,0,0,0.52);
 }
 
+.section>div:last-child {
+    border-bottom: none;
+}
+
 .beerBox {
     margin: 20px 0px;
     
+}
+
+.beerImage {
+    height: 100px;
+    /* margin-top: -20px; */
+}
+
+.beerType {
+    color:  #AEAEAE;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }

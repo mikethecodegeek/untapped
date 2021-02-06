@@ -5,6 +5,7 @@ import {useHistory} from 'react-router-dom';
 
 const UserCheckin = ({username,beer,brewery,rating, beerId,breweryId,comment}) => {
    const history = useHistory();
+   
    const nameClick = () => {
        history.push(`/users/${username}`)
    }
@@ -17,15 +18,24 @@ const UserCheckin = ({username,beer,brewery,rating, beerId,breweryId,comment}) =
     return (
         <div className='checkinContainer'>
              <p><span onClick={nameClick} className='link'>{username} </span> is drinking a <span onClick={beerClick} className='link'>{beer}</span> by <span onClick={brewClick} className='link'>{brewery}</span></p>
-             <p>{comment}</p>
-             <ReactStars
-                count={5}
-                value={rating}
-                size={24}
-                edit={false}
-                activeColor="#ffd700"
-  />
+        
+            <div className='single-checkin'>
+             <pre>{comment}</pre>
+             {rating !== 0 &&
+             <div className='user-rating'>
+
+                <ReactStars
+                    count={5}
+                    value={rating}
+                    size={24}
+                    edit={false}
+                    activeColor="#ffd700"
+    />
+             </div>
+}
+             </div>
         </div>
+       
     )
 }
 

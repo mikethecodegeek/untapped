@@ -6,3 +6,13 @@
 .beerSearchType, .brewSearchType {
     font-size: .9rem;
 }
+
+.search-image {
+    height: 50px;
+    align-self: flex-start;
+    /* margin-top: -20px; */
+}
+
+.bb {
+    border-bottom: thin solid #888888;
+}
