@@ -71,7 +71,7 @@ module.exports = {
           ibu:45,
           createdAt: new Date(),
           updatedAt: new Date(),
-          imgUrl: 'https://untappd.akamaized.net/site/beer_logos/beer-6655_afc4e_sm.jpeg',
+          imgUrl: 'https://untappd.akamaized.net/site/beer_logos/beer-4473_1cbe8_sm.jpeg',
           description: 'Swirling clouds tumble as the storm begins to calm. Settle. Breathe in the moment, then break through the smooth, light head to the bittersweet reward.',
 
         },
