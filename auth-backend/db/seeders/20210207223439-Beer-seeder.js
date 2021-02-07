@@ -29,7 +29,7 @@ module.exports = {
         },
         {
           name: "Budweiser",
-          brewery: 3,
+          brewery: 2,
           type: 3,
           abv: 5,
           ibu:12,
@@ -41,7 +41,7 @@ module.exports = {
         },
         {
           name: "Bud-Light",
-          brewery: 3,
+          brewery: 2,
           type: 3,
           abv: 4,
           ibu:6,
@@ -53,7 +53,7 @@ module.exports = {
         },
         {
           name: "Michelob ULTRA",
-          brewery: 3,
+          brewery: 4,
           type: 3,
           abv: 4,
           ibu:6,
@@ -65,7 +65,7 @@ module.exports = {
         },
         {
           name: "Guinness Draught",
-          brewery: 4,
+          brewery: 3,
           type: 2,
           abv: 4,
           ibu:45,
@@ -77,7 +77,7 @@ module.exports = {
         },
         {
           name: "Coors Banquet",
-          brewery: 5,
+          brewery: 4,
           type: 3,
           abv: 5,
           ibu:40,
