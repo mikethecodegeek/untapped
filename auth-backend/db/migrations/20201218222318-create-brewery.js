@@ -22,7 +22,7 @@ module.exports = {
         references: {model: 'BreweryTypes'}
       },
       description: {
-        type: Sequelize.STRING
+        type: Sequelize.TEXT
       },
       imgUrl: {
         type: Sequelize.STRING
