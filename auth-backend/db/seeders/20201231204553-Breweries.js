@@ -1,8 +1,8 @@
 "use strict";
 
-const {
-  searchBeersAndBrews,
-} = require("../../../auth-front-end/src/store/search");
+// const {
+//   searchBeersAndBrews,
+// } = require("../../../auth-front-end/src/store/search");
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
