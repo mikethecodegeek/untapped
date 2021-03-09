@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useHistory } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import './Navigation.css';
@@ -8,12 +8,12 @@ import SearchBar from '../SearchBar';
 
 function Navigation({ isLoaded, style }){
   const sessionUser = useSelector(state => state.session.user);
-
+  const history= useHistory()
   let sessionLinks;
   if (sessionUser) {
     sessionLinks = (
       <>
-      <h1>UNTAPPD</h1>
+      <h1 className='nav-logo' onClick={()=>history.push('/')}>UNTAPPD</h1>
       <div>
       <ul>
         <li>
@@ -30,7 +30,7 @@ function Navigation({ isLoaded, style }){
       <>
      
 
-      <h1>UNTAPPD</h1>
+      <h1 className='nav-logo' onClick={()=>history.push('/')}>UNTAPPD</h1>
       <div>
         <NavLink className='nav-button' to="/login">SIGN IN</NavLink>
         <NavLink className='nav-button' to="/signup">CREATE AN ACCOUNT</NavLink>

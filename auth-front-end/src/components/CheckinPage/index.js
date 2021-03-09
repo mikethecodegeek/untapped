@@ -2,8 +2,7 @@ import React, { useState,useParams } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {useHistory} from 'react-router-dom';
 import ReactStars from "react-rating-stars-component";
-// import { Redirect } from "react-router-dom";
-// import * as sessionActions from "../../store/session";
+import ImageUpload from '../PhotoUpload/PhotoUpload'
 import {newCheckin} from '../../store/checkin'
 // import ModalComponent from '../Modal'
 
@@ -17,6 +16,7 @@ function CheckinPage({id, closeModal}) {
   const [description, setDescription] = useState("");
   const [beerId, setBeer] = useState("");
   const [rating, setRating] = useState("");
+ 
   // const [errors, setErrors] = useState([]);
 
 //   if (sessionUser) return <Redirect to="/" />;
@@ -57,6 +57,7 @@ const changeRating = (newRating) => {
           required
         />
       </label> */}
+      <ImageUpload onNewImageBase64={(e)=>console.log(setPic(e))} />
      
         
         <textarea

@@ -33,7 +33,7 @@ function SignupFormPage() {
 
   return (
     <div className="container">
-      <div className="section max500">
+      <div className="section max500 signup-form">
        
          <h2 className='text-center'>Create an account</h2>
             <form  onSubmit={handleSubmit}>

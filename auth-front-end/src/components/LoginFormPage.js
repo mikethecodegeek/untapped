@@ -28,7 +28,7 @@ function LoginFormPage() {
 
   return (
     <div className="container">
-    <div className="section max500">
+    <div className="section max500 sign-in-form">
       <h2 className='text-center'>Sign In</h2>
     <form onSubmit={handleSubmit}>
       <ul>
@@ -53,6 +53,11 @@ function LoginFormPage() {
         />
      
       <button className="signup-button" type="submit">Log In</button>
+      <button className="signup-button" onClick={(e)=> {
+        setCredential('demo@user.io')
+        setPassword('password')
+        return dispatch(sessionActions.login({ credential, password }))
+      }}>Demo User</button>
     </form>
     </div>
     </div>
