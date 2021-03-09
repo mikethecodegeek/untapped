@@ -1,0 +1,34 @@
+.footer {
+    color: white;
+    background-color: black;
+    font-size: 1.5rem;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+
+}
+
+.footer a {
+    text-decoration: none;
+}
+.footer > ul {
+    display: flex;
+    justify-content: space-between;
+    width: 500px;
+    margin: auto;
+}
+
+.spacer {
+    display: block;
+    height: 150px;
+}
+
+.footer > ul > a> li {
+    list-style: none;
+}
+.footer > ul > a:visited {
+    color: white;
+}

@@ -15,6 +15,7 @@ import CheckinPage from './components/CheckinPage'
 import Checkin from './components/Checkin'
 import Profile from './components/Profile'
 import Home from './components/Home'
+import Footer from './components/Footer/Footer'
 
 
 
@@ -68,6 +69,7 @@ function App() {
           </Route>
         </Switch>
       )}
+      <Footer />
     </>
   );
 }
