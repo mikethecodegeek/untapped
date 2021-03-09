@@ -6,6 +6,14 @@ const { Beer, Brewery, Type,BreweryType,checkin,User } = require('../../db/model
 const router = express.Router();
 
 
+router.get(
+    "/homebreweries",
+    asyncHandler(async (req, res) => {
+      const beers = await Brewery.findAll({ limit: 6 });
+      res.json(beers);
+    })
+  );
+
 router.get('/', asyncHandler(async (req,res) => {
     const breweries = await Brewery.findAll();
     res.json(breweries)

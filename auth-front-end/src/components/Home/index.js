@@ -4,17 +4,18 @@ import { useHistory } from "react-router-dom";
 import { getAllBreweries } from "../../store/breweries";
 import SearchBar from "../SearchBar";
 import {getHomeBeers} from '../../store/beer'
+import Showcase from '../Showcase/Showcase'
 import "./home.css";
 
 const Home = () => {
   const dispatch = useDispatch();
   const history = useHistory();
-  const breweries = useSelector((state) => state.breweries);
-  const beers = useSelector((state) => state.beers);
-  console.log(beers)
+  // const breweries = useSelector((state) => state.breweries);
+  // const beers = useSelector((state) => state.beers);
+  // console.log(beers)
   useEffect(() => {
-    dispatch(getAllBreweries());
-    dispatch(getHomeBeers());
+    // dispatch(getAllBreweries());
+    // dispatch(getHomeBeers());
   }, []);
 
   const handleBreweryClick = (id) => {
@@ -33,6 +34,7 @@ const Home = () => {
         </div>
       </div>
       <SearchBar />
+      <Showcase />
     </div>
   );
 };

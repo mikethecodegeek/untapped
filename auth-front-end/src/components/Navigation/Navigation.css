@@ -1,5 +1,6 @@
 .nav-bar {
-    position: relative;
+    /* position: relative; */
+    position: sticky;
     height: 60px;
     top: -18px;
     display: flex;

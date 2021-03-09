@@ -27,6 +27,13 @@ export const getAllBreweries = () => async dispatch => {
     return breweries.data;
   };
 
+  export const getHomeBreweries = () => async dispatch => {
+    const breweries = await fetch('/api/breweries/homebreweries');
+    dispatch(getBreweries(breweries.data));
+    // console.log(beers.data)
+    return breweries.data;
+  };
+
   export const getBrewery = (id) => async dispatch => {
     const brewery = await fetch(`/api/breweries/${id}`);
     dispatch(getSingleBrewery(brewery.data));

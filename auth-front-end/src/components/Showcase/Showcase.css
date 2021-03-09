@@ -1,0 +1,38 @@
+.beer-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 80%;
+    margin: auto;
+}
+
+.beer-section > .single {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin: 25px 0px;
+}
+
+.single-content {
+    /* border: thin solid black; */
+    width: 150px;
+}
+
+.single-content:hover {
+    cursor: pointer;
+}
+
+.single-content >img {
+    width: 100%;
+    height: auto;
+}
+
+.single-content > p {
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.showcase-title {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    margin: 50px 0px 20px;
+}
