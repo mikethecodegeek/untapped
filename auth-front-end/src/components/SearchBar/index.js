@@ -29,7 +29,7 @@ const SearchBar = ({style}) => {
           type="text"
           onChange={(e) => setSearchTerm(e.target.value)}
           value={searchTerm}
-          placeholder='Find a beer or brewery'
+          placeholder='Find a beer or brewery (ex.. Bud, IPA, Lager)'
         ></input>
         {/* +<button type='submit'>Search</button> */}
       </form>

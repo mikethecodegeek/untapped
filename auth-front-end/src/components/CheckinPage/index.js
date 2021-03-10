@@ -57,7 +57,7 @@ const changeRating = (newRating) => {
           required
         />
       </label> */}
-      <ImageUpload onNewImageBase64={(e)=>console.log(setPic(e))} />
+      {/* <ImageUpload onNewImageBase64={(e)=>console.log(setPic(e))} /> */}
      
         
         <textarea
@@ -83,6 +83,7 @@ const changeRating = (newRating) => {
           onChange={changeRating}
           size={24}
           activeColor="#ffd700"
+          
         />
      
      

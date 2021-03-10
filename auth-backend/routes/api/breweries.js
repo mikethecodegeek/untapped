@@ -9,7 +9,7 @@ const router = express.Router();
 router.get(
     "/homebreweries",
     asyncHandler(async (req, res) => {
-      const beers = await Brewery.findAll({ limit: 6 });
+      const beers = await Brewery.findAll({ limit: 20 });
       res.json(beers);
     })
   );

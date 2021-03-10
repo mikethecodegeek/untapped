@@ -34,7 +34,7 @@ const Home = () => {
         </div>
       </div>
       <SearchBar />
-      <Showcase />
+      <Showcase limit={6} />
     </div>
   );
 };

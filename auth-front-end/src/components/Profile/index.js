@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { getUserCheckins } from "../../store/checkin";
 import { useParams } from "react-router-dom";
 import UserCheckin from "../../components/UI/UserCheckin";
+import Showcase from '../Showcase/Showcase'
 import "./profile.css";
 
 const Profile = () => {
@@ -48,6 +49,7 @@ const Profile = () => {
               }
             })}
         </div>
+        <Showcase limit={20}/>
       </div>
     </div>
   );

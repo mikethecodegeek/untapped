@@ -19,7 +19,7 @@ const ShowBrewery = ({ name, city,state,type,description, breweryId,image }) => 
             {city},{state}
           </p>
           <p className="gray brewType">{type}</p>
-          <p className='gray brewDescription'>{description}</p>
+          <p className=' brewDescription'>{description}</p>
           </div>
           <div className="brewImageDiv">
       <img className="brewImage" src={image} />

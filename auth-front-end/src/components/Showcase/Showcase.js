@@ -3,13 +3,13 @@ import Beers from './Beers'
 import Breweries from './Breweries'
 import './Showcase.css'
 
-function Showcase(){
+function Showcase({limit}){
  
 
   return (
       <>
-     <Beers />
-     <Breweries />
+     <Beers limit={limit} />
+     <Breweries limit={limit} />
     </>
   );
 }

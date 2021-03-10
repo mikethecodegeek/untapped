@@ -5,23 +5,35 @@
     margin: auto;
 }
 
-.beer-section > .single {
+.profile-view {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    width: 80%;
+    margin: auto;
+}
+
+.beer-section > .single, .profile-view>.single {
     text-align: center;
     display: flex;
     justify-content: center;
     margin: 25px 0px;
+    
 }
 
 .single-content {
     /* border: thin solid black; */
     width: 150px;
 }
+.single-content-profile {
+    /* border: thin solid black; */
+    width: 100px;
+}
 
-.single-content:hover {
+.single-content:hover, .single-content-profile:hover {
     cursor: pointer;
 }
 
-.single-content >img {
+.single-content >img, .single-content-profile>img {
     width: 100%;
     height: auto;
 }
@@ -29,6 +41,11 @@
 .single-content > p {
     text-transform: uppercase;
     font-family: 'Montserrat', sans-serif;
+}
+.single-content-profile  p {
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    font-size: .8rem;
 }
 
 .showcase-title {

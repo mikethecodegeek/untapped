@@ -84,7 +84,7 @@ router.get(
 router.get(
   "/homebeers",
   asyncHandler(async (req, res) => {
-    const beers = await Beer.findAll({ limit: 6 });
+    const beers = await Beer.findAll({ limit: 20 });
     res.json(beers);
   })
 );
