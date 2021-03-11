@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 import * as sessionActions from '../../store/session';
 import { useSelector } from 'react-redux';
 import {useHistory} from 'react-router-dom';
+import {getUserCheckins} from '../../store/checkin'
 
 function ProfileButton({ user }) {
   const dispatch = useDispatch();
@@ -17,7 +18,9 @@ function ProfileButton({ user }) {
     setShowMenu(true);
   };
 
-  const getProfile = () => {
+  const getProfile = async() => {
+    await  dispatch(getUserCheckins(name));
+    
     history.push(`/users/${name}`)
   }
   

@@ -65,7 +65,7 @@ module.exports = {
         },
         {
           name: "Sosus",
-          brewery: 5,
+          brewery: 1,
           type: 1,
           abv: 8,
           ibu: 100,
@@ -149,7 +149,7 @@ module.exports = {
         },
         {
           name: "Busch Lite",
-          brewery: 4,
+          brewery: 2,
           type: 3,
           abv: 4,
           ibu:6,
@@ -161,7 +161,7 @@ module.exports = {
         },
         {
           name: "Bud Light Lime",
-          brewery: 4,
+          brewery: 2,
           type: 3,
           abv: 4,
           ibu:6,
@@ -173,7 +173,7 @@ module.exports = {
         },
         {
           name: "Michelob AmberBock",
-          brewery: 4,
+          brewery: 2,
           type: 3,
           abv: 4,
           ibu:6,
@@ -185,7 +185,7 @@ module.exports = {
         },
         {
           name: "Busch Beer",
-          brewery: 4,
+          brewery: 2,
           type: 3,
           abv: 4,
           ibu:6,
@@ -197,7 +197,7 @@ module.exports = {
         },
         {
           name: "Budweiser Select",
-          brewery: 4,
+          brewery: 2,
           type: 3,
           abv: 4,
           ibu:6,
@@ -209,7 +209,7 @@ module.exports = {
         },
         {
           name: "Bud Light Orange",
-          brewery: 4,
+          brewery: 2,
           type: 3,
           abv: 4,
           ibu:6,
@@ -221,7 +221,7 @@ module.exports = {
         },
         {
           name: "Natural Ice",
-          brewery: 4,
+          brewery: 2,
           type: 3,
           abv: 4,
           ibu:6,
@@ -233,7 +233,7 @@ module.exports = {
         },
         {
           name: "Budweiser Freedom Reserve",
-          brewery: 4,
+          brewery: 2,
           type: 3,
           abv: 4,
           ibu:6,
@@ -245,7 +245,7 @@ module.exports = {
         },
         {
           name: "Michelob Light",
-          brewery: 4,
+          brewery: 2,
           type: 3,
           abv: 4,
           ibu:6,
