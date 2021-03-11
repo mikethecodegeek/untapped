@@ -140,21 +140,20 @@ This is an example of how to list things you need to use the software and how to
 
 <!-- USAGE EXAMPLES -->
 ## Usage
-
-### Demo User
+#### Demo User
 Click on the Sign-In button to bring up a modal. Use the Demo User button to login
 
-### Home Page
+#### Home Page
 Browse trending beers and breweries
 
-### Search Beers and Breweries
+#### Search Beers and Breweries
 Use the search box to locate specific beers / breweries
 Search examples: Bud, IPA, Lager
 
-### Checkin / Rate a beer (Logged in user only)
+#### Checkin / Rate a beer (Logged in user only)
 Once you find a beer you're interested in just hit the checkin button. You can now give the beer a star rating and a review for others to see.
 
-### Profile
+#### Profile
 Click on the user icon in the navbar to locate you're profile page. Here you can see all you're activity.
 
 
