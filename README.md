@@ -160,7 +160,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 ## Contact
 
 Michael Sanford - mikethecodegeek@gmail.com
-
+Portfolio: [https://michaelsanford.me/](https://github.com/mikethecodegeek/untapped)
 Project Link: [https://intense-caverns-51880.herokuapp.com/](https://github.com/mikethecodegeek/untapped)
 
 
