@@ -72,8 +72,6 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][https://i.imgur.com/tB5ANo7.png]](https://i.imgur.com/tB5ANo7.png)
-
 Here's a blank template to get started:
 **To avoid retyping too much info. Do a search and replace with your text editor for the following:**
 `github_username`, `repo_name`, `twitter_handle`, `email`, `project_title`, `project_description`
@@ -83,7 +81,9 @@ Here's a blank template to get started:
 
 * [React]()
 * [Redux]()
-* [Express]()
+* [ExpressJS]()
+* [NodeJS]()
+* [PostgreSQL]
 
 
 
