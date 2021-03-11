@@ -159,9 +159,9 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Michael Sanford - mikethecodegeek@gmail.com
-Portfolio: [https://michaelsanford.me/](https://github.com/mikethecodegeek/untapped)
-Project Link: [https://intense-caverns-51880.herokuapp.com/](https://github.com/mikethecodegeek/untapped)
+Michael Sanford - mikethecodegeek@gmail.com  
+Portfolio: [Portfolio](https://github.com/mikethecodegeek/untapped)  
+Project Link: [UnTappd](https://intense-caverns-51880.herokuapp.com/)
 
 
 
