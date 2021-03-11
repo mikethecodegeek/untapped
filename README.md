@@ -141,9 +141,21 @@ This is an example of how to list things you need to use the software and how to
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+### Demo User
+Click on the Sign-In button to bring up a modal. Use the Demo User button to login
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+### Home Page
+Browse trending beers and breweries
+
+### Search Beers and Breweries
+Use the search box to locate specific beers / breweries
+Search examples: Bud, IPA, Lager
+
+### Checkin / Rate a beer (Logged in user only)
+Once you find a beer you're interested in just hit the checkin button. You can now give the beer a star rating and a review for others to see.
+
+### Profile
+Click on the user icon in the navbar to locate you're profile page. Here you can see all you're activity.
 
 
 
