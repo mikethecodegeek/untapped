@@ -79,11 +79,11 @@ Here's a blank template to get started:
 
 ### Built With
 
-* [React]()
-* [Redux]()
-* [ExpressJS]()
-* [NodeJS]()
-* [PostgreSQL]
+* React
+* Redux
+* ExpressJS
+* NodeJS
+* PostgreSQL
 
 
 
