@@ -27,13 +27,13 @@
 <br />
 <p align="center">
   <a href="https://github.com/mikethecodegeek/untapped">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="https://i.imgur.com/tB5ANo7.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">UnTappd</h3>
 
   <p align="center">
-    project_description
+    Share and discover you're next favorite beer!
     <br />
     <br />
     <a href="https://intense-caverns-51880.herokuapp.com/">View Demo</a>
